@@ -1,27 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import './App.css'
-import CsharpOriginal from 'devicons-react/icons/CsharpOriginal'
-import CplusplusOriginal from 'devicons-react/icons/CplusplusOriginal'
-import Css3Original from 'devicons-react/icons/Css3Original'
-import Html5Original from 'devicons-react/icons/Html5Original'
-import JavaOriginal from 'devicons-react/icons/JavaOriginal'
-import JavascriptOriginal from 'devicons-react/icons/JavascriptOriginal'
-import TypescriptOriginal from 'devicons-react/icons/TypescriptOriginal'
-import PythonOriginal from 'devicons-react/icons/PythonOriginal'
-import AzureOriginal from 'devicons-react/icons/AzureOriginal'
-import GitOriginal from 'devicons-react/icons/GitOriginal'
-import LinuxOriginal from 'devicons-react/icons/LinuxOriginal'
-import VscodeOriginal from 'devicons-react/icons/VscodeOriginal'
-import VisualstudioPlain from 'devicons-react/icons/VisualstudioPlain'
-import ExpressOriginal from 'devicons-react/icons/ExpressOriginal'
-import ReactOriginal from 'devicons-react/icons/ReactOriginal'
-import DotnetPlain from 'devicons-react/icons/DotnetPlain'
-import NextjsOriginal from 'devicons-react/icons/NextjsOriginal'
-import NodejsOriginal from 'devicons-react/icons/NodejsOriginal'
-import MysqlOriginal from 'devicons-react/icons/MysqlOriginal'
-import MongodbOriginal from 'devicons-react/icons/MongodbOriginal'
-import PostgresqlOriginal from 'devicons-react/icons/PostgresqlOriginal'
 
 function App() {
   const [activeSection, setActiveSection] = useState('')
@@ -89,42 +68,42 @@ function App() {
     {
       category: 'Languages',
       items: [
-        { name: 'JavaScript', icon: JavascriptOriginal },
-        { name: 'TypeScript', icon: TypescriptOriginal },
-        { name: 'Python', icon: PythonOriginal },
-        { name: 'C#', icon: CsharpOriginal },
-        { name: 'Java', icon: JavaOriginal },
-        { name: 'C++', icon: CplusplusOriginal },
-        { name: 'HTML', icon: Html5Original },
-        { name: 'CSS', icon: Css3Original }
+        { name: 'JavaScript', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+        { name: 'TypeScript', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+        { name: 'Python', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+        { name: 'C#', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
+        { name: 'Java', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
+        { name: 'C++', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
+        { name: 'HTML', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+        { name: 'CSS', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' }
       ]
     },
     {
       category: 'Tools',
       items: [
-        { name: 'Git', icon: GitOriginal },
-        { name: 'VS Code', icon: VscodeOriginal },
-        { name: 'Visual Studio', icon: VisualstudioPlain },
-        { name: 'Linux', icon: LinuxOriginal },
-        { name: 'DevOps', icon: AzureOriginal }
+        { name: 'Git', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+        { name: 'VS Code', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
+        { name: 'Visual Studio', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg' },
+        { name: 'Linux', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' },
+        { name: 'DevOps', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' }
       ]
     },
     {
       category: 'Frameworks',
       items: [
-        { name: 'React', icon: ReactOriginal },
-        { name: 'Next.js', icon: NextjsOriginal },
-        { name: 'Node.js', icon: NodejsOriginal },
-        { name: '.NET', icon: DotnetPlain },
-        { name: 'Express.js', icon: ExpressOriginal }
+        { name: 'React', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+        { name: 'Next.js', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+        { name: 'Node.js', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+        { name: '.NET', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-plain.svg' },
+        { name: 'Express.js', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' }
       ]
     },
     {
       category: 'Databases',
       items: [
-        { name: 'PostgreSQL', icon: PostgresqlOriginal },
-        { name: 'MongoDB', icon: MongodbOriginal },
-        { name: 'SQL', icon: MysqlOriginal }
+        { name: 'PostgreSQL', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+        { name: 'MongoDB', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
+        { name: 'SQL', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' }
       ]
     }
   ]
@@ -376,26 +355,23 @@ function App() {
             >
               <h3>{category.category}</h3>
               <div className="skill-list">
-                {category.items.map((skill, i) => {
-                  const IconComponent = skill.icon
-                  return (
-                    <motion.div 
-                      key={i} 
-                      className="skill-item-icon"
-                      data-skill={skill.name.toLowerCase().replace(/\s+/g, '-')}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: i * 0.1 }}
-                      whileHover={{ scale: 1.1, y: -5 }}
-                    >
-                      <div className="skill-icon">
-                        <IconComponent size={32} />
-                      </div>
-                      <span>{skill.name}</span>
-                    </motion.div>
-                  )
-                })}
+                {category.items.map((skill, i) => (
+                  <motion.div 
+                    key={i} 
+                    className="skill-item-icon"
+                    data-skill={skill.name.toLowerCase().replace(/\s+/g, '-')}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.1 }}
+                    whileHover={{ scale: 1.1, y: -5 }}
+                  >
+                    <div className="skill-icon">
+                      <img src={skill.iconUrl} alt={skill.name} width="32" height="32" />
+                    </div>
+                    <span>{skill.name}</span>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           ))}

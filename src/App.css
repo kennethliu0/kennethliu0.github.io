@@ -320,12 +320,13 @@
   transition: all 0.3s ease;
 }
 
-.skill-icon svg {
+.skill-icon img {
   width: 32px;
   height: 32px;
+  object-fit: contain;
 }
 
-.skill-item-icon[data-skill="express.js"] .skill-icon svg {
+.skill-item-icon[data-skill="express.js"] .skill-icon img {
   filter: invert(1);
 }
 
