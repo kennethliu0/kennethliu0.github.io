@@ -16,7 +16,7 @@ import VscodeOriginal from 'devicons-react/icons/VscodeOriginal'
 import VisualstudioPlain from 'devicons-react/icons/VisualstudioPlain'
 import ExpressOriginal from 'devicons-react/icons/ExpressOriginal'
 import ReactOriginal from 'devicons-react/icons/ReactOriginal'
-import DotnetOriginal from 'devicons-react/icons/DotnetOriginal'
+import DotnetPlain from 'devicons-react/icons/DotnetPlain'
 import NextjsOriginal from 'devicons-react/icons/NextjsOriginal'
 import NodejsOriginal from 'devicons-react/icons/NodejsOriginal'
 import MysqlOriginal from 'devicons-react/icons/MysqlOriginal'
@@ -115,7 +115,7 @@ function App() {
         { name: 'React', icon: ReactOriginal },
         { name: 'Next.js', icon: NextjsOriginal },
         { name: 'Node.js', icon: NodejsOriginal },
-        { name: '.NET', icon: DotnetOriginal },
+        { name: '.NET', icon: DotnetPlain },
         { name: 'Express.js', icon: ExpressOriginal }
       ]
     },
