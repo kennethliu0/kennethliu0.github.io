@@ -1,0 +1,24 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" /> 
+        <meta name="description" content="Explore the portfolio of Kenneth Liu, a creative full-stack developer building modern web applications with React, Next.js, and TypeScript. Discover my projects and skills.">
+        <meta name="robots" content="index, follow">
+        <meta name="google" content="notranslate">
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
