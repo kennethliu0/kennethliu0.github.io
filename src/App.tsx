@@ -58,7 +58,7 @@ function App() {
   const employment = [
     {
       title: "Software Engineer Intern",
-      company: "InterNNest, Inc.",
+      company: "InternNest, Inc.",
       date: "2024 - 2025",
       description:
         "Developed a housing marketplace and event finder for summer interns.",
