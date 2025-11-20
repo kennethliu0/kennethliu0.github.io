@@ -31,12 +31,6 @@ function App() {
 
   const projects = [
     {
-      title: "InternNest",
-      description: "Housing marketplace and event finder for summer interns",
-      tags: ["React", "Node.js", "Express.js", "MongoDB", "JavaScript"],
-      projectUrl: "https://internnest.net",
-    },
-    {
       title: "Decanter",
       description:
         "Volunteer management platform for Science Olympiad tournaments",
@@ -62,6 +56,13 @@ function App() {
   ];
 
   const employment = [
+    {
+      title: "Software Engineer Intern",
+      company: "InterNNest, Inc.",
+      date: "2024 - 2025",
+      description:
+        "Developed a housing marketplace and event finder for summer interns.",
+    },
     {
       title: "Software Engineer Intern",
       company: "Baker Engineering and Risk Consultants, Inc.",
