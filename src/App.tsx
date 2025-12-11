@@ -58,17 +58,24 @@ function App() {
   const employment = [
     {
       title: "Software Engineer Intern",
+      company: "LastingLearn, Inc.",
+      date: "2025 - Present",
+      description:
+        "Engineered an AI-native SAT prep platform with personalized practice.",
+    },
+    {
+      title: "Software Engineer Intern",
       company: "InternNest, Inc.",
       date: "2024 - 2025",
       description:
-        "Developed a housing marketplace and event finder for summer interns.",
+        "Architected a housing marketplace and event finder for summer interns.",
     },
     {
       title: "Software Engineer Intern",
       company: "Baker Engineering and Risk Consultants, Inc.",
       date: "2024",
       description:
-        "Developed event tree analysis software in C#/.NET WPF with dynamic tree editing.",
+        "Built an event tree analysis software in C#/.NET WPF with dynamic tree editing.",
     },
     {
       title: "Teaching Assistant",
