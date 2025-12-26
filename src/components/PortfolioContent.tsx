@@ -1,26 +1,18 @@
-import { useEffect, useRef } from "react";
+import {
+  type Project,
+  type Employment,
+  type SkillCategory,
+} from "../data/portfolio";
 
-export default function PortfolioContent({ projects, employment, skills }) {
-  const observerRef = useRef<IntersectionObserver | null>(null);
-
-  useEffect(() => {
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = document.querySelectorAll(".animate-on-scroll");
-    elements.forEach((el) => observerRef.current?.observe(el));
-
-    return () => observerRef.current?.disconnect();
-  }, []);
-
+export default function PortfolioContent({
+  projects,
+  employment,
+  skills,
+}: {
+  projects: Project[];
+  employment: Employment[];
+  skills: SkillCategory[];
+}) {
   return (
     <>
       <section className="hero animate-on-load animate-fade-in-up-large">
