@@ -1,0 +1,64 @@
+---
+const sections = [
+  { id: 'projects', label: 'Projects' },
+  { id: 'employment', label: 'Experience' },
+  { id: 'skills', label: 'Skills' },
+];
+---
+
+<nav class="nav">
+  <div class="nav-container">
+    <ul class="nav-links animate-on-load animate-fade-in-right">
+      {sections.map((section, index) => (
+        <li
+          class="animate-on-load animate-fade-in-down hover-scale"
+          style={`animation-delay: ${index * 0.1}s`}
+        >
+          <a href={`#${section.id}`} data-section={section.id}>
+            <span class="nav-link-text">{section.label}</span>
+            <span class="active-indicator" />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<script>
+  function initNavigation() {
+    const sections = ['projects', 'employment', 'skills'];
+
+    function handleScroll() {
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      let currentSection = '';
+
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            currentSection = sectionId;
+            break;
+          }
+        }
+      }
+
+      if (!currentSection && window.scrollY < 200) {
+        currentSection = 'projects';
+      }
+
+      document.querySelectorAll('.nav a[data-section]').forEach((link) => {
+        if (link.getAttribute('data-section') === currentSection) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+  }
+
+  initNavigation();
+</script>

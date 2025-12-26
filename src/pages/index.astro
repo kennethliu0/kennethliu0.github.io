@@ -1,18 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.jsx';
-import PortfolioContent from '../components/PortfolioContent.jsx';
+import Navigation from '../components/Navigation.astro';
+import PortfolioContent from '../components/PortfolioContent.astro';
 import { projects, employment, skills } from '../data/portfolio';
 ---
 <Layout title="Kenneth Liu | Portfolio">
 	<main class="app">
-		<Navigation client:load />
-
-		<PortfolioContent 
-			client:visible 
-			projects={projects} 
-			employment={employment} 
-			skills={skills} 
+		<Navigation />
+		<PortfolioContent
+			projects={projects}
+			employment={employment}
+			skills={skills}
 		/>
 	</main>
 </Layout>
