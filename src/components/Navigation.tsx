@@ -1,17 +1,13 @@
-import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 export default function Navigation() {
   const [activeSection, setActiveSection] = useState('projects');
 
   useEffect(() => {
-    // Set a default value on mount, in case the user doesn't scroll initially
-    // and the page loads somewhere in the middle.
-    handleScroll(); 
-    
+    handleScroll();
+
     function handleScroll() {
       const sections = ['projects', 'employment', 'skills'];
-      // Add a buffer so the active state changes a bit earlier
       const scrollPosition = window.scrollY + window.innerHeight / 2;
 
       let currentSection = '';
@@ -25,9 +21,7 @@ export default function Navigation() {
           }
         }
       }
-      // If no section is in view (e.g., at the very top or bottom), you might want a default
       if (!currentSection) {
-         // Default to projects if scroll is near top
         if (window.scrollY < 200) currentSection = 'projects';
       }
 
@@ -41,53 +35,25 @@ export default function Navigation() {
   return (
     <nav className="nav">
       <div className="nav-container">
-        <motion.ul
-          className="nav-links"
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-        >
+        <ul className="nav-links animate-on-load animate-fade-in-right">
           {['projects', 'employment', 'skills'].map((section, index) => (
-            <motion.li
+            <li
               key={section}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.15 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="animate-on-load animate-fade-in-down hover-scale"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <a
                 href={`#${section}`}
                 className={activeSection === section ? 'active' : ''}
-                style={{ position: 'relative', display: 'inline-block' }}
               >
-                <motion.span
-                  initial={{ y: 0 }}
-                  whileHover={{ y: -2 }}
-                  transition={{ duration: 0.2 }}
-                >
+                <span className="nav-link-text">
                   {section === 'employment' ? 'Experience' : section.charAt(0).toUpperCase() + section.slice(1)}
-                </motion.span>
-                {activeSection === section && (
-                  <motion.span
-                    className="active-indicator"
-                    layoutId="activeSection"
-                    style={{
-                      position: 'absolute',
-                      bottom: '-4px',
-                      left: 0,
-                      right: 0,
-                      height: '2px',
-                      backgroundColor: 'var(--accent)',
-                      borderRadius: '2px',
-                    }}
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                  />
-                )}
+                </span>
+                <span className="active-indicator" />
               </a>
-            </motion.li>
+            </li>
           ))}
-        </motion.ul>
+        </ul>
       </div>
     </nav>
   );
