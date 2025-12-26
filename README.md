@@ -1,3 +1,3 @@
 # Portfolio
 
-Portfolio site built with Astro and React islands with Framer Motion animations
+Portfolio site built with Astro
