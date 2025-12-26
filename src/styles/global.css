@@ -654,3 +654,34 @@
   .nav-links a.active .active-indicator {
     transform: scaleX(1);
   }
+
+  /* Reduced Motion Accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+
+    .animate-on-load,
+    .animate-on-scroll {
+      opacity: 1;
+      transform: none;
+    }
+
+    .cta-button:hover,
+    .project-card:hover,
+    .social-link:hover,
+    .hover-scale:hover,
+    .hover-scale-sm:hover,
+    .hover-lift:hover,
+    .hover-lift-sm:hover {
+      transform: none;
+    }
+  }
