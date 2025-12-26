@@ -23,6 +23,12 @@ export interface SkillCategory {
   items: SkillItem[];
 }
 
+export interface SocialLinks {
+  github: string;
+  linkedin: string;
+  resume: string;
+}
+
 export const projects: Project[] = [
   {
     title: 'Decanter',
@@ -114,3 +120,9 @@ export const skills: SkillCategory[] = [
     ]
   }
 ];
+
+export const socialLinks: SocialLinks = {
+  github: 'https://github.com/kennethliu0',
+  linkedin: 'https://linkedin.com/in/kennethhliu',
+  resume: '/Kenneth_Liu_resume.pdf'
+};

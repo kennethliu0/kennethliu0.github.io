@@ -26,13 +26,20 @@ interface SkillCategory {
   items: Skill[];
 }
 
+interface SocialLinks {
+  github: string;
+  linkedin: string;
+  resume: string;
+}
+
 interface Props {
   projects: Project[];
   employment: Job[];
   skills: SkillCategory[];
+  socialLinks: SocialLinks;
 }
 
-const { projects, employment, skills } = Astro.props;
+const { projects, employment, skills, socialLinks } = Astro.props;
 ---
 
 <section class="hero animate-on-load animate-fade-in-up-large">
@@ -51,7 +58,7 @@ const { projects, employment, skills } = Astro.props;
         View My Work
       </a>
       <a
-        href="/Kenneth_Liu_resume.pdf"
+        href={socialLinks.resume}
         target="_blank"
         rel="noopener noreferrer"
         class="cta-button secondary animate-on-load animate-fade-in-up delay-700 hover-scale"
@@ -162,7 +169,7 @@ const { projects, employment, skills } = Astro.props;
 <footer class="footer">
   <div class="social-links">
     <a
-      href="https://github.com/kennethliu0"
+      href={socialLinks.github}
       target="_blank"
       rel="noopener noreferrer"
       class="social-link hover-scale-sm"
@@ -173,7 +180,7 @@ const { projects, employment, skills } = Astro.props;
       </svg>
     </a>
     <a
-      href="https://linkedin.com/in/kennethhliu"
+      href={socialLinks.linkedin}
       target="_blank"
       rel="noopener noreferrer"
       class="social-link hover-scale-sm"
@@ -184,7 +191,7 @@ const { projects, employment, skills } = Astro.props;
       </svg>
     </a>
     <a
-      href="/Kenneth_Liu_resume.pdf"
+      href={socialLinks.resume}
       target="_blank"
       rel="noopener noreferrer"
       class="social-link hover-scale-sm"
