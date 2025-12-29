@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import PortfolioContent from '../components/PortfolioContent.astro';
-import { projects, employment, skills, socialLinks } from '../data/portfolio';
+import { projects, employment, skills, socialLinks, about } from '../data/portfolio';
 ---
 <Layout title="Kenneth Liu | Portfolio">
 	<main class="app">
@@ -12,6 +12,7 @@ import { projects, employment, skills, socialLinks } from '../data/portfolio';
 			employment={employment}
 			skills={skills}
 			socialLinks={socialLinks}
+			about={about}
 		/>
 	</main>
 </Layout>

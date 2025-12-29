@@ -37,9 +37,10 @@ interface Props {
   employment: Job[];
   skills: SkillCategory[];
   socialLinks: SocialLinks;
+  about: string;
 }
 
-const { projects, employment, skills, socialLinks } = Astro.props;
+const { projects, employment, skills, socialLinks, about } = Astro.props;
 ---
 
 <section class="hero animate-on-load animate-fade-in-up-large">
@@ -47,9 +48,11 @@ const { projects, employment, skills, socialLinks } = Astro.props;
     <h1 class="animate-on-load animate-fade-in-up delay-200">
       Hi, I'm Kenneth Liu
     </h1>
-    <p class="subtitle animate-on-load animate-fade-in-up delay-400">
-      Full Stack Developer & Creative Problem Solver
-    </p>
+    <div class="about-container animate-on-load animate-fade-in-up delay-400">
+      <p class="about-text">
+        {about}
+      </p>
+    </div>
     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
       <a
         href="#projects"

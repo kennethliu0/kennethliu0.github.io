@@ -126,3 +126,5 @@ export const socialLinks: SocialLinks = {
   linkedin: 'https://linkedin.com/in/kennethhliu',
   resume: '/Kenneth_Liu_resume.pdf'
 };
+
+export const about = "I'm a computer science student at Stanford and a full-stack developer dedicated to building high-impact software. I am an engineering team member at Carta, a data-driven course planning site for Stanford students. I'm also currently a Software Engineer Intern at LastingLearn, where I'm helping build an AI-native SAT test preparation platform. I'm passionate about clean code, performance, and creating seamless user experiences. In my free time, I enjoy going to the gym and listening to R&B and pop.";
