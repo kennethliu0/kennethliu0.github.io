@@ -43,10 +43,6 @@ const sections = [
         }
       }
 
-      if (!currentSection && window.scrollY < 200) {
-        currentSection = 'projects';
-      }
-
       document.querySelectorAll('.nav a[data-section]').forEach((link) => {
         if (link.getAttribute('data-section') === currentSection) {
           link.classList.add('active');
