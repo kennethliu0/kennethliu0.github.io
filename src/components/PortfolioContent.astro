@@ -144,7 +144,7 @@ const { projects, employment, skills, socialLinks } = Astro.props;
         <div class="skill-list">
           {category.items.map((skill, i) => (
             <div
-              class="skill-item-icon animate-on-scroll hover-lift-sm"
+              class="skill-item-icon animate-on-scroll"
               data-skill={skill.name.toLowerCase().replace(/\s+/g, "-")}
               style={`transition-delay: ${i * 0.1}s`}
             >
