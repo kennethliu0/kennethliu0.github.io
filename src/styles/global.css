@@ -224,11 +224,10 @@ button {
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 900;
   margin-bottom: 4rem;
-  text-align: center;
+  text-align: left;
   position: relative;
-  display: inline-block;
-  left: 50%;
-  transform: translateX(-50%);
+  display: block;
+  width: fit-content;
   background: var(--text-primary);
   color: var(--bg-primary);
   padding: 0.5rem 2rem;
