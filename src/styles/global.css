@@ -329,6 +329,29 @@ button {
   box-shadow: 2px 2px 0 var(--shadow-color);
 }
 
+.see-more-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--bg-card);
+  border: 3px solid var(--border);
+  box-shadow: 5px 5px 0 var(--shadow-color);
+  font-weight: 700;
+  text-decoration: none;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.see-more-link:hover {
+  background-color: var(--accent);
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--shadow-color);
+}
+
 /* Timeline */
 .timeline {
   position: relative;
