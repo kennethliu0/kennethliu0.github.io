@@ -50,7 +50,7 @@ export const employment: Employment[] = [
   {
     title: "Software Engineer Intern",
     company: "LastingLearn, Inc.",
-    date: "2025 - Present",
+    date: "2025",
     description:
       "Engineered an AI-native SAT prep platform with personalized practice.",
   },
