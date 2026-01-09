@@ -550,36 +550,6 @@ button {
   }
 }
 
-/* Simple Entrance Animations */
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in-up,
-.animate-fade-in-up-large,
-.animate-fade-in-right,
-.animate-fade-in-down,
-.animate-scale-in {
-  animation: slideUp 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
-}
-
-.animate-on-scroll {
-  opacity: 0;
-  transition: transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28), opacity 0.4s ease;
-}
-
-.animate-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* Remove hover scale effects for strict brutalism */
 .hover-scale:hover, 
 .hover-lift:hover {

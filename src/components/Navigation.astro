@@ -8,11 +8,10 @@ const sections = [
 
 <nav class="nav">
   <div class="nav-container">
-    <ul class="nav-links animate-on-load animate-fade-in-right">
+    <ul class="nav-links">
       {sections.map((section, index) => (
         <li
-          class="animate-on-load animate-fade-in-down hover-scale"
-          style={`animation-delay: ${index * 0.1}s`}
+          class="hover-scale"
         >
           <a href={`#${section.id}`} data-section={section.id}>
             <span class="nav-link-text">{section.label}</span>
