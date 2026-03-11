@@ -117,8 +117,6 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0;
-  padding: 0 0.5rem;
 }
 
 .folder-header h1 {
@@ -172,13 +170,19 @@ button {
   background-color: var(--accent);
 }
 
-/* About row: headshot + about text side by side */
-.about-row {
+/* Hero row: headshot + (name/links + about) side by side on desktop */
+.hero-row {
   display: flex;
   align-items: flex-start;
   gap: 1.5rem;
-  margin-top: 1rem;
   padding: 0 0.5rem;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .headshot-wrapper {
@@ -199,6 +203,10 @@ button {
   border: 2px solid var(--border);
   box-shadow: 4px 4px 0 var(--shadow-color);
   padding: 1rem 1.2rem;
+}
+
+.mobile-only {
+  display: none;
 }
 
 .about-body .about-text {
@@ -585,12 +593,14 @@ button {
   }
 
   .folder-header {
-    padding: 0 0.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
   }
 
   .folder-header h1 {
     -webkit-text-stroke: 0;
-    font-size: 1.5rem;
+    font-size: 4rem;
     text-shadow: 2px 2px 0 var(--accent);
   }
 
@@ -611,17 +621,31 @@ button {
     height: 16px;
   }
 
-  .about-row {
+  .hero-row {
     flex-direction: row;
     align-items: center;
-    gap: 1rem;
+    gap: 0.75rem;
     padding: 0 0.25rem;
   }
 
+  .hero-right {
+    gap: 0.25rem;
+  }
+
   .headshot {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     box-shadow: 3px 3px 0 var(--shadow-color);
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+    margin-top: 0.75rem;
+    padding: 0 0.25rem;
   }
 
   .about-text {
