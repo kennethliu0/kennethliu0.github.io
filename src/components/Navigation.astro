@@ -10,13 +10,14 @@ const sections = [
   <div class="nav-container">
     <ul class="nav-links">
       {sections.map((section, index) => (
-        <li
-          class="hover-scale"
-        >
-          <a href={`#${section.id}`} data-section={section.id}>
-            <span class="nav-link-text">{section.label}</span>
-            <span class="active-indicator" />
-          </a>
+        <li>
+          <button
+            class="nav-tab"
+            data-tab={section.id}
+            aria-controls={section.id}
+          >
+            {section.label}
+          </button>
         </li>
       ))}
     </ul>
@@ -24,36 +25,28 @@ const sections = [
 </nav>
 
 <script>
-  function initNavigation() {
-    const sections = ['projects', 'employment', 'skills'];
+  function initTabs() {
+    const tabs = document.querySelectorAll<HTMLButtonElement>('.nav-tab');
+    const sections = document.querySelectorAll<HTMLElement>('.tab-content');
 
-    function handleScroll() {
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
-      let currentSection = '';
-
-      for (const sectionId of sections) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            currentSection = sectionId;
-            break;
-          }
-        }
-      }
-
-      document.querySelectorAll('.nav a[data-section]').forEach((link) => {
-        if (link.getAttribute('data-section') === currentSection) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
+    function switchTab(targetId: string) {
+      sections.forEach((section) => {
+        section.hidden = section.id !== targetId;
+      });
+      tabs.forEach((tab) => {
+        tab.classList.toggle('active', tab.dataset.tab === targetId);
       });
     }
 
-    handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        if (tab.dataset.tab) switchTab(tab.dataset.tab);
+      });
+    });
+
+    // Default to projects tab
+    switchTab('projects');
   }
 
-  initNavigation();
+  initTabs();
 </script>

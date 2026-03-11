@@ -43,175 +43,155 @@ interface Props {
 const { projects, employment, skills, socialLinks, about } = Astro.props;
 ---
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>
-      Hi, I'm Kenneth Liu
-    </h1>
-    <div class="about-container">
-      <p class="about-text">
-        {about}
-      </p>
-    </div>
-    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-      <a
-        href="#projects"
-        class="cta-button hover-scale"
-      >
-        View My Work
+<div class="folder">
+  <div class="folder-header">
+    <h1>Kenneth Liu</h1>
+    <div class="header-links">
+      <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" class="social-link hover-scale-sm" aria-label="GitHub">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
       </a>
-      <a
-        href={socialLinks.resume}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="cta-button secondary hover-scale"
-      >
-        View Resume
+      <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" class="social-link hover-scale-sm" aria-label="LinkedIn">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+      </a>
+      <a href={socialLinks.resume} target="_blank" rel="noopener noreferrer" class="social-link hover-scale-sm" aria-label="Resume">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6zm2-6h8v2H8v-2zm0-4h8v2H8v-2zm0 8h5v2H8v-2z"/></svg>
       </a>
     </div>
   </div>
-</section>
 
-<section id="projects" class="section">
-  <h2 class="section-title">Featured Projects</h2>
-  <div class="projects-grid">
-    {projects.map((project, index) => (
-      <div
-        class="project-card hover-lift"
-      >
-        <div class="project-header">
-          {project.projectUrl ? (
-            <a
-              href={project.projectUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="project-title-link"
-            >
-              <h3>{project.title}</h3>
-            </a>
-          ) : (
-            <h3>{project.title}</h3>
-          )}
-          {project.githubUrl && (
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="title-github-link hover-scale-sm"
-              aria-label="GitHub Repository"
-            >
-              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-              </svg>
-            </a>
-          )}
-        </div>
-        <p>{project.description}</p>
-        <div class="tech-tags">
-          {project.tags.map((tag) => (
-            <span class="tech-tag">{tag}</span>
-          ))}
-        </div>
-      </div>
-    ))}
+  <div class="about-row">
+    <div class="headshot-wrapper">
+      <img src="/Kenneth Headshot Square.jpg" alt="Kenneth Liu" class="headshot" />
+    </div>
+    <div class="about-body">
+      <p class="about-text">{about}</p>
+    </div>
   </div>
-  <a
-    href={socialLinks.github}
-    target="_blank"
-    rel="noopener noreferrer"
-    class="see-more-link hover-scale"
-  >
-    See more on GitHub
-    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-    </svg>
-  </a>
-</section>
 
-<section id="employment" class="section">
-  <h2 class="section-title">Employment History</h2>
-  <div class="timeline">
-    {employment.map((job, index) => (
-      <div
-        class="timeline-item"
-      >
-        <h3>{job.title}</h3>
-        <div class="company">{job.company}</div>
-        <div class="date">{job.date}</div>
-        <p>{job.description}</p>
-      </div>
-    ))}
-  </div>
-</section>
+  <nav class="tab-bar">
+    <button class="nav-tab active" data-tab="projects" aria-controls="projects">Projects</button>
+    <button class="nav-tab" data-tab="employment" aria-controls="employment">Experience</button>
+    <button class="nav-tab" data-tab="skills" aria-controls="skills">Skills</button>
+    <button class="nav-tab" data-tab="resume" aria-controls="resume">Resume</button>
+  </nav>
 
-<section id="skills" class="section">
-  <h2 class="section-title">Skills & Technologies</h2>
-  <div class="skills-grid">
-    {skills.map((category, index) => (
-      <div
-        class="skill-category"
-      >
-        <h3>{category.category}</h3>
-        <div class="skill-list">
-          {category.items.map((skill, i) => (
-            <div
-              class="skill-item-icon"
-              data-skill={skill.name.toLowerCase().replace(/\s+/g, "-")}
-            >
-              <div class="skill-icon">
-                <Image
-                  src={skill.iconUrl}
-                  alt={skill.name}
-                  width={32}
-                  height={32}
-                  loading="lazy"
-                />
-              </div>
-              <span>{skill.name}</span>
+  <div class="folder-body">
+
+    <div id="projects" class="tab-content" hidden>
+      <div class="projects-grid">
+        {projects.map((project) => (
+          <div class="project-card hover-lift">
+            <div class="project-header">
+              {project.projectUrl ? (
+                <a href={project.projectUrl} target="_blank" rel="noopener noreferrer" class="project-title-link">
+                  <h3>{project.title}</h3>
+                </a>
+              ) : (
+                <h3>{project.title}</h3>
+              )}
+              {project.githubUrl && (
+                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="title-github-link hover-scale-sm" aria-label="GitHub Repository">
+                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+              )}
             </div>
-          ))}
-        </div>
+            <p>{project.description}</p>
+            <div class="tech-tags">
+              {project.tags.map((tag) => (
+                <span class="tech-tag">{tag}</span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
-    ))}
-  </div>
-</section>
+      <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" class="see-more-link hover-scale">
+        See more on GitHub
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      </a>
+    </div>
 
-<footer class="footer">
-  <div class="social-links">
-    <a
-      href={socialLinks.github}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="social-link hover-scale-sm"
-      aria-label="GitHub"
-    >
-      <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-      </svg>
-    </a>
-    <a
-      href={socialLinks.linkedin}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="social-link hover-scale-sm"
-      aria-label="LinkedIn"
-    >
-      <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-      </svg>
-    </a>
-    <a
-      href={socialLinks.resume}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="social-link hover-scale-sm"
-      aria-label="Resume"
-    >
-      <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6zm2-6h8v2H8v-2zm0-4h8v2H8v-2zm0 8h5v2H8v-2z" />
-      </svg>
-    </a>
-  </div>
-  <p>&copy; 2026 Kenneth Liu. All rights reserved.</p>
-</footer>
+    <div id="employment" class="tab-content" hidden>
+      <div class="timeline">
+        {employment.map((job) => (
+          <div class="timeline-item">
+            <h3>{job.title}</h3>
+            <div class="company">{job.company}</div>
+            <div class="date">{job.date}</div>
+            <p>{job.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
 
+    <div id="skills" class="tab-content" hidden>
+      <div class="skills-grid">
+        {skills.map((category) => (
+          <div class="skill-category">
+            <h3>{category.category}</h3>
+            <div class="skill-list">
+              {category.items.map((skill) => (
+                <div class="skill-item-icon" data-skill={skill.name.toLowerCase().replace(/\s+/g, "-")}>
+                  <div class="skill-icon">
+                    <Image src={skill.iconUrl} alt={skill.name} width={28} height={28} loading="lazy" />
+                  </div>
+                  <span>{skill.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div id="resume" class="tab-content" hidden>
+      <div class="resume-actions">
+        <a
+          href={socialLinks.resume}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="cta-button secondary hover-scale"
+        >
+          Open in New Tab
+        </a>
+        <a
+          href={socialLinks.resume}
+          download
+          class="cta-button hover-scale"
+        >
+          Download PDF
+        </a>
+      </div>
+      <iframe
+        src={socialLinks.resume}
+        class="resume-viewer"
+        title="Kenneth Liu Resume"
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initTabs() {
+    const tabs = document.querySelectorAll<HTMLButtonElement>('.nav-tab');
+    const sections = document.querySelectorAll<HTMLElement>('.tab-content');
+
+    function switchTab(targetId: string) {
+      sections.forEach((section) => {
+        section.hidden = section.id !== targetId;
+      });
+      tabs.forEach((tab) => {
+        tab.classList.toggle('active', tab.dataset.tab === targetId);
+      });
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        if (tab.dataset.tab) switchTab(tab.dataset.tab);
+      });
+    });
+
+    switchTab('projects');
+  }
+
+  initTabs();
+</script>
