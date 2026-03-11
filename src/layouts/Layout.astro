@@ -30,6 +30,13 @@ const { title } = Astro.props;
 		<meta property="twitter:url" content="https://kennethliu0.github.io/portfolio/" />
 		<meta property="twitter:title" content="Kenneth Liu - Full Stack Developer" />
 		<meta property="twitter:description" content="Explore the portfolio of Kenneth Liu, a creative full-stack developer building modern web applications with React, Next.js, and TypeScript. Discover my projects and skills." />
+		<script is:inline>
+			(function() {
+				var s = localStorage.getItem('theme');
+				var d = s ? s === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+				if (d) document.documentElement.setAttribute('data-theme', 'dark');
+			})();
+		</script>
 	</head>
 	<body>
 		<slot />

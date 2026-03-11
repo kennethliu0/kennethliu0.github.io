@@ -15,6 +15,20 @@
   --border: #000000;
   --shadow-color: #000000;
   --card-border-width: 3px;
+  --dot-color: #000;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0a0e27;
+  --bg-secondary: #1a1f3d;
+  --bg-card: #12162e;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --accent: #635bff;
+  --accent-hover: #7a73ff;
+  --border: #2d3258;
+  --shadow-color: #000000;
+  --dot-color: #1e2347;
 }
 
 .tab-content[hidden] {
@@ -29,7 +43,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  background-image: radial-gradient(#000 1px, transparent 0);
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 0);
   background-size: 40px 40px;
 }
 
@@ -44,7 +58,7 @@ a {
 
 a:hover {
   background-color: var(--accent);
-  color: #000;
+  color: var(--text-primary);
   text-decoration: none;
 }
 
@@ -111,7 +125,7 @@ button {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 900;
   text-shadow: 3px 3px 0 var(--accent);
-  -webkit-text-stroke: 1px var(--border);
+  -webkit-text-stroke: 1px var(--text-primary);
 }
 
 .header-links {
@@ -133,6 +147,26 @@ button {
 }
 
 .social-link:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--accent);
+  background-color: var(--accent);
+}
+
+/* Dark mode toggle */
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  background-color: var(--bg-card);
+  border: 2px solid var(--border);
+  color: var(--text-primary);
+  box-shadow: 3px 3px 0 var(--shadow-color);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle:hover {
   transform: translate(-2px, -2px);
   box-shadow: 5px 5px 0 var(--accent);
   background-color: var(--accent);
@@ -560,13 +594,19 @@ button {
     text-shadow: 2px 2px 0 var(--accent);
   }
 
-  .social-link {
+  .social-link,
+  .theme-toggle {
     width: 34px;
     height: 34px;
     box-shadow: 2px 2px 0 var(--shadow-color);
   }
 
   .social-link svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .theme-toggle svg {
     width: 16px;
     height: 16px;
   }
