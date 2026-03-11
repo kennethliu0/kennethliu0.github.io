@@ -600,7 +600,7 @@ button {
 
   .folder-header h1 {
     -webkit-text-stroke: 0;
-    font-size: 4rem;
+    font-size: 1.8rem;
     text-shadow: 2px 2px 0 var(--accent);
   }
 
@@ -794,10 +794,6 @@ button {
 }
 
 @media (max-width: 400px) {
-  .folder-header h1 {
-    font-size: 1.2rem;
-  }
-
   .nav-tab {
     font-size: 0.6rem;
     padding: 0.3rem 0.5rem;
