@@ -173,11 +173,6 @@ export const skills: SkillCategory[] = [
         iconUrl:
           "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
       },
-      {
-        name: "Azure DevOps",
-        iconUrl:
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
-      },
     ],
   },
   {
