@@ -6,6 +6,8 @@ interface Props {
 }
 
 const { title } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const description = "Kenneth Liu is a computer science student at Stanford University and full-stack software engineer. Explore his projects, experience at Stripe and Stanford Carta, and technical skills.";
 ---
 <!doctype html>
 <html lang="en">
@@ -13,23 +15,54 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="canonical" href={canonicalURL} />
 		<title>{title}</title>
 		<meta name="author" content="Kenneth Liu" />
-		<meta name="description" content="Explore the portfolio of Kenneth Liu, a creative full-stack developer building modern web applications with React, Next.js, and TypeScript. Discover my projects and skills." />
+		<meta name="description" content={description} />
+		<meta name="keywords" content="Kenneth Liu, Kenneth Liu Stanford, Kenneth Liu CS, Stanford computer science, full-stack developer, software engineer, Stanford Carta, Stripe intern" />
 		<meta name="robots" content="index, follow" />
 		<meta name="google" content="notranslate" />
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://kennethliu0.github.io/portfolio/" />
-		<meta property="og:title" content="Kenneth Liu - Full Stack Developer" />
-		<meta property="og:description" content="Explore the portfolio of Kenneth Liu, a creative full-stack developer building modern web applications with React, Next.js, and TypeScript. Discover my projects and skills." />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content="Kenneth Liu — Stanford CS & Full-Stack Developer" />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="https://kennethliu.me/Kenneth Headshot Square.jpg" />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content="https://kennethliu0.github.io/portfolio/" />
-		<meta property="twitter:title" content="Kenneth Liu - Full Stack Developer" />
-		<meta property="twitter:description" content="Explore the portfolio of Kenneth Liu, a creative full-stack developer building modern web applications with React, Next.js, and TypeScript. Discover my projects and skills." />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content="Kenneth Liu — Stanford CS & Full-Stack Developer" />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content="https://kennethliu.me/Kenneth Headshot Square.jpg" />
+
+		<!-- JSON-LD Structured Data -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Kenneth Liu",
+			"url": "https://kennethliu.me",
+			"image": "https://kennethliu.me/Kenneth Headshot Square.jpg",
+			"jobTitle": "Software Engineer",
+			"description": "Computer science student at Stanford University and full-stack software engineer.",
+			"alumniOf": {
+				"@type": "CollegeOrUniversity",
+				"name": "Stanford University"
+			},
+			"worksFor": [
+				{
+					"@type": "Organization",
+					"name": "Stanford Carta"
+				}
+			],
+			"sameAs": [
+				"https://github.com/kennethliu0",
+				"https://linkedin.com/in/kennethhliu"
+			],
+			"knowsAbout": ["Computer Science", "Full-Stack Development", "TypeScript", "React", "Next.js", "Go", "Python"]
+		})} />
+
 		<script is:inline>
 			(function() {
 				var s = localStorage.getItem('theme');
