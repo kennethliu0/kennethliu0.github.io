@@ -239,4 +239,4 @@ export const socialLinks: SocialLinks = {
 };
 
 export const about =
-  "I'm a computer science student at Stanford and a full-stack developer. I'm a backend engineer on Stanford Carta, a data-driven course planning platform. This summer, I'll be joining Stripe as a software engineer intern.";
+  "I'm a computer science student at Stanford and a backend engineer on Stanford Carta, a data-driven course planning platform. This summer, I'll be joining Stripe as a software engineer intern.";
