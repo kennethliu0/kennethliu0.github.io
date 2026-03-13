@@ -76,7 +76,6 @@ const { projects, employment, skills, socialLinks, about } = Astro.props;
     <button class="nav-tab active" data-tab="projects" aria-controls="projects">Projects</button>
     <button class="nav-tab" data-tab="employment" aria-controls="employment">Experience</button>
     <button class="nav-tab" data-tab="skills" aria-controls="skills">Skills</button>
-    <button class="nav-tab" data-tab="resume" aria-controls="resume">Resume</button>
   </nav>
 
   <div class="folder-body">
@@ -146,30 +145,6 @@ const { projects, employment, skills, socialLinks, about } = Astro.props;
       </div>
     </div>
 
-    <div id="resume" class="tab-content" hidden>
-      <div class="resume-actions">
-        <a
-          href={socialLinks.resume}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="cta-button secondary hover-scale"
-        >
-          Open in New Tab
-        </a>
-        <a
-          href={socialLinks.resume}
-          download
-          class="cta-button hover-scale"
-        >
-          Download PDF
-        </a>
-      </div>
-      <iframe
-        src={socialLinks.resume}
-        class="resume-viewer"
-        title="Kenneth Liu Resume"
-      ></iframe>
-    </div>
   </div>
 </div>
 
