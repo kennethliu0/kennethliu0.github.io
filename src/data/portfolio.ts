@@ -56,7 +56,7 @@ export const projects: Project[] = [
     description:
       "Spotify playlist resequencer that creates smooth transitions based on audio features, reducing average Euclidean distance between feature vectors by 58%.",
     tags: ["TypeScript", "React", "Vite", "GitHub Actions"],
-    projectUrl: "https://kennethliu0.github.io/remix",
+    projectUrl: "https://kennethliu.me/remix",
     githubUrl: "https://github.com/kennethliu0/remix",
   },
 ];
