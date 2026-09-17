@@ -24,7 +24,7 @@ Single-page Astro site with no client-side framework (pure Astro components + va
 - `src/components/PortfolioContent.astro` — Main content: hero, projects grid, employment timeline, skills grid, footer.
 - `src/components/Navigation.astro` — Sticky nav with scroll-based active section highlighting (vanilla JS).
 - `src/styles/global.css` — All styling in one CSS file.
-- `public/` — Static assets (favicon, resume PDF, profile banner image).
+- `public/` — Static assets (favicons, profile photos, and the profile banner image).
 
 ## Deployment
 
