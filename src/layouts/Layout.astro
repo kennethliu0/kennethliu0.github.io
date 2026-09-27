@@ -7,7 +7,7 @@ interface Props {
 
 const { title } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const description = "Kenneth Liu is a computer science student at Stanford University and full-stack software engineer. Explore his projects, experience at Stripe and Stanford Carta, and technical skills.";
+const description = "Kenneth Liu is a computer science student at Stanford University and full-stack software engineer. Explore his projects, experience at Stripe, Jane Street, and Stanford Carta, and technical skills.";
 ---
 <!doctype html>
 <html lang="en">
@@ -27,7 +27,7 @@ const description = "Kenneth Liu is a computer science student at Stanford Unive
 		<title>{title}</title>
 		<meta name="author" content="Kenneth Liu" />
 		<meta name="description" content={description} />
-		<meta name="keywords" content="Kenneth Liu, Kenneth Liu Stanford, Kenneth Liu CS, Stanford computer science, full-stack developer, software engineer, Stanford Carta, Stripe intern" />
+		<meta name="keywords" content="Kenneth Liu, Kenneth Liu Stanford, Kenneth Liu CS, Stanford computer science, full-stack developer, software engineer, Stanford Carta, Stripe intern, Jane Street intern" />
 		<meta name="robots" content="index, follow" />
 		<meta name="google" content="notranslate" />
 

@@ -63,8 +63,13 @@ export const projects: Project[] = [
 export const employment: Employment[] = [
   {
     title: "Incoming Software Engineer Intern",
+    company: "Jane Street",
+    date: "June 2027 – September 2027",
+  },
+  {
+    title: "Incoming Software Engineer Intern",
     company: "Stripe",
-    date: "June 2026 – September 2026",
+    date: "January 2027 – March 2027",
   },
   {
     title: "Backend Software Engineer",
@@ -73,23 +78,13 @@ export const employment: Employment[] = [
   },
   {
     title: "Software Engineer Intern",
+    company: "Stripe",
+    date: "June 2026 – September 2026",
+  },
+  {
+    title: "Software Engineer Intern",
     company: "LastingLearn, Inc.",
     date: "October 2025 – January 2026",
-  },
-  {
-    title: "Software Engineer Intern",
-    company: "InternNest, Inc.",
-    date: "August 2024 - March 2025",
-  },
-  {
-    title: "Software Engineer Intern",
-    company: "Baker Engineering and Risk Consultants, Inc.",
-    date: "June 2024 – August 2024",
-  },
-  {
-    title: "Teaching Assistant",
-    company: "ScioVirtual Foundation",
-    date: "July 2023, 2024, 2025",
   },
 ];
 
@@ -237,4 +232,4 @@ export const socialLinks: SocialLinks = {
 };
 
 export const about =
-  "I'm a computer science student at Stanford and a backend engineer on Stanford Carta, a data-driven course planning platform. This summer, I'll be joining Stripe as a software engineer intern.";
+  "I'm a computer science student at Stanford and a backend engineer on Stanford Carta, a data-driven course planning platform. After interning at Stripe this past summer, I'll be returning this winter, followed by Jane Street next summer.";
